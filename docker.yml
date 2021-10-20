@@ -1,0 +1,8 @@
+- hosts: demo
+  become: yes
+  user: ansible
+  tasks:
+   - name: Install docker
+     yum: name=docker state=present
+   - name: Start docker
+     service: name=docker state=started
